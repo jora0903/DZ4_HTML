@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>        
+
+        .grid-conteiner {
+            display: grid;
+            grid-template-columns: 800px;
+            grid-template-rows: 200px 200px 200px;
+            margin: 15px
+        }
+
+        .block {
+            
+            display: inline-grid;
+            grid-template-columns: 400px 400px;
+            grid-template-rows: 200px 200px 200px;
+            transition: filter .3s ease-in-out;
+        }
+
+        .block-text {
+            background-color: rgb(238, 163, 141);
+            display: flex;
+        }
+
+        .block-img {            
+            overflow: hidden;
+            transition: transform 1s ease-in-out;
+        }
+
+        p {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 12pt;
+            margin: auto;
+        }
+
+        img {            
+            width: 100%;
+            transition: transform 1s ease-in-out;
+        }
+
+        .block:hover {
+            filter: brightness(.3);
+            /* transition: 0.3s; */
+        }
+
+        .block:hover img{
+            transform: scale(1.5);
+            /* transition: 1s ; */ 
+            /* transition-timing-function: ease-in-out;
+            transition-duration: 1s; */
+        }
+
+        .block:nth-child(2n+1) .block-img {
+            order: 1;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="grid-conteiner">
+        <div class="block">
+            <div class="block-img"><img src="icons_hw_module_4/owl.png" alt="owl"></div>
+            <div class="block-text"><p>HELLO, WORLD!</p></div>            
+        </div>
+
+        <div class="block">            
+            <div class="block-img"><img src="icons_hw_module_4/owl.png" alt="owl"></div>
+            <div class="block-text"><p>HELLO, WORLD!</p></div>
+        </div>
+
+        <div class="block">
+            <div class="block-img"><img src="icons_hw_module_4/owl.png" alt="owl"></div>
+            <div class="block-text"><p>HELLO, WORLD!</p></div>
+        </div>
+    </div>
+
+</body>
+</html>
